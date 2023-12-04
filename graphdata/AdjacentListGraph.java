@@ -9,6 +9,9 @@ public class AdjacentListGraph {
     }
 
     public void addVertex(String place) {
+        for (LinkedList<Vertex> link : adjacentList) {
+            if (link.get(0).getPlace().equals(place)) return;
+        }
         LinkedList<Vertex> link = new LinkedList<>();
         link.add(new Vertex(place));
         adjacentList.add(link);
