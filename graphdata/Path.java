@@ -26,4 +26,9 @@ public class Path {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public String toString() {
+        return graph.toString();
+    }
 }
