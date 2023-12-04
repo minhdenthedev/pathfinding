@@ -2,9 +2,14 @@ package graphdata;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
 
 public class Path {
     AdjacentListGraph graph;
+    int numOfPlaces;
 
     public Path(String csvFile) {
         graph = new AdjacentListGraph();
@@ -25,6 +30,14 @@ public class Path {
         } catch(IOException e){
             e.printStackTrace();
         }
+    }
+
+    public int getNumOfPlaces() {
+        return graph.getNumOfVertices();
+    }
+
+    public ArrayList<String> shortestPath(String origin, String destination) {
+        return graph.findShortestPath(origin, destination);
     }
 
     @Override

@@ -1,6 +1,6 @@
 package graphdata;
 
-public class Vertex {
+public class Vertex implements Comparable<Vertex>{
     String place;
     double distance;
     double capacity;
@@ -15,6 +15,11 @@ public class Vertex {
         this.place = place;
         this.distance = distance;
         this.capacity = capacity;
+    }
+
+    public Vertex(String place, double distance) {
+        this.place = place;
+        this.distance = distance;
     }
 
     public String getPlace() {
@@ -39,5 +44,16 @@ public class Vertex {
 
     public void setCapacity(double capacity) {
         this.capacity = capacity;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + place + ", " + distance + ", " + capacity + ")";
+    }
+
+    @Override
+    public int compareTo(Vertex o) {
+        if (this.distance <= o.distance) return -1;
+        else return 1;
     }
 }
