@@ -1,4 +1,4 @@
-package graphdata;
+package graph;
 
 public class Vertex implements Comparable<Vertex>{
     String place;
